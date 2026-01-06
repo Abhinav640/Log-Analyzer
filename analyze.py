@@ -25,6 +25,26 @@ def log_format(orignal_file, formatted_file):
                 
     with open(formatted_file, "w") as cor_file:
         for line in log_data:
-            cor_file.write(line + "\n")
+            updated_line = line.replace("  ", " ")
+            cor_file.write(updated_line + "\n")
 
+def log_parser(formatted_file):
+    error_type = {}
+    with open (formatted_file, "r") as file:
+        log_file = file.readlines()
+        for lines in log_file:
+            error = lines.split(" ")[2]
+            if error not in error_type:
+                error_type[error] = 1
+            else:
+                error_type[error] += 1
+            
+    return error_type
 
+def log_list(formatted_file, error_type):
+    with open (formatted_file, "r") as file:
+        log_file = file.readlines()
+        for lines in log_file:
+            if error_type in lines:
+                print(lines)
+    

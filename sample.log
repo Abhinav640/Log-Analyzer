@@ -15,7 +15,7 @@ username=oracle/oracle, csvdelimiter=,}
 
 [2010-04-24 07:51:54,393]  INFO - [main] Attempting to log in...
 
-[2010-04-24 07:51:55,081]  INFO - [main] Successfully logged in as: wchung/eric
+[2010-04-24 07:51:55,081]  ERROR - [main] Successfully logged in as: wchung/eric
 
 [2010-04-24 07:51:55,081] DEBUG - [main] BulkOpsClient.doImport(): Execution begin.
 
